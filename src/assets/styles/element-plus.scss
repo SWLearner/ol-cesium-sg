@@ -1,0 +1,477 @@
+/**
+ * 覆盖 element-plus 的某些样式
+ */
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-container {
+  height: 100%;
+  position: relative;
+}
+
+.el-scrollbar {
+  height: 100%;
+
+  .el-scrollbar__wrap {
+    overflow-x: auto;
+  }
+}
+
+.el-message-box__content {
+  word-break: break-all;
+}
+
+.el-form--inline {
+  .el-form-item {
+    width: 260px;
+  }
+
+  .el-select,
+  .el-input {
+    width: 100%;
+  }
+}
+.el-select-dropdown {
+  .el-select-dropdown__item {
+    color: #606266;
+    &.selected {
+      color: #062c6e;
+      font-weight: bold;
+    }
+  }
+}
+.el-table {
+  --el-table-header-background-color: #f3f5f9;
+
+  .sort-caret.ascending {
+    top: 0;
+  }
+
+  .sort-caret.descending {
+    bottom: 0;
+  }
+
+  .caret-wrapper {
+    height: 22px;
+  }
+
+  .is-sortable .cell {
+    height: 23px;
+  }
+
+  .cell {
+    img {
+      cursor: pointer;
+      display: inline-block;
+      height: 35px;
+      max-width: 100%;
+      vertical-align: middle;
+    }
+  }
+}
+
+.el-menu--popup {
+  padding: 0;
+}
+
+.el-form--label-top .el-form-item__label {
+  padding: 0;
+  height: 35px;
+  line-height: 35px;
+}
+
+.menu-container,
+.el-menu--vertical {
+  .el-menu {
+    background-color: #2e3759;
+    color: rgba(255, 255, 255, 0.7);
+
+    .el-menu-item,
+    .el-sub-menu__title {
+      height: 50px;
+      line-height: 50px;
+    }
+
+    .el-sub-menu__title {
+      color: rgba(255, 255, 255, 0.7);
+
+      &:hover {
+        background-color: #242d4d;
+      }
+
+      i {
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s;
+      }
+    }
+
+    .el-submenu.g-submenu.is-active {
+      & > .el-sub-menu__title {
+        color: #fff;
+
+        i {
+          color: #fff;
+        }
+      }
+    }
+
+    .el-menu-item {
+      background-color: #2e3759;
+      color: rgba(255, 255, 255, 0.7);
+
+      i {
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s;
+      }
+
+      &.is-active {
+        color: rgba(255, 255, 255, 0.7);
+        background-color: #07f;
+      }
+
+      &:not(.is-active):hover {
+        outline: 0;
+        background-color: #242d4d;
+      }
+    }
+  }
+}
+
+.el-menu--collapse {
+  width: 62px;
+}
+
+.el-loading-mask {
+  z-index: 1000;
+}
+
+.el-transfer-panel__item {
+  display: block;
+}
+
+.el-table-column--selection .cell {
+  height: 23px;
+
+  .el-checkbox {
+    height: 23px;
+  }
+}
+
+.el-table--mini {
+  td,
+  th {
+    padding: 3px 0;
+  }
+}
+
+.g-table {
+  .el-table__row {
+    td:last-child {
+      .cell {
+        padding: 0 10px;
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+@mixin button-colors($normal, $hover, $active, $focus: $hover) {
+  color: $normal;
+
+  &:hover {
+    color: $hover;
+  }
+
+  &:focus {
+    color: $focus;
+  }
+
+  &:active {
+    color: $active;
+  }
+}
+
+.el-button--text {
+  background: 0 0;
+  padding-left: 0;
+  padding-right: 0;
+
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+
+  &.default {
+    @include button-colors($normal: $primary, $hover: #38568b, $active: #242d4d);
+  }
+
+  &.success {
+    @include button-colors($normal: #67c23a, $hover: #85ce61, $active: #5daf34);
+  }
+
+  &.info {
+    @include button-colors($normal: #909399, $hover: #a6a9ad, $active: #82848a);
+  }
+
+  &.warning {
+    @include button-colors($normal: #e6a23c, $hover: #ebb563, $active: #cf9236);
+  }
+
+  &.danger {
+    @include button-colors($normal: #f56c6c, $hover: #f78989, $active: #dd6161);
+  }
+}
+
+.el-transfer-panel {
+  width: 240px;
+}
+
+.el-button--info {
+  color: #333333;
+  background-color: #dcdde0;
+  border: 0;
+  margin-right: 20px;
+  box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.4);
+}
+
+.el-tree {
+  color: #000;
+  background: transparent;
+}
+
+.el-dialog {
+  --el-text-color-primary: #fff;
+  --el-text-color-regular: #fff;
+
+  .el-dialog__header {
+    border-radius: 10px 10px 0 0;
+    background-color: var(--color);
+    margin-right: 0px;
+    padding: 10px;
+  }
+
+  .el-dialog__headerbtn {
+    font-size: 2rem;
+    top: 0;
+
+    .el-dialog__close {
+      color: #fff;
+    }
+  }
+
+  .el-input--default {
+    --el-input-text-color: #000;
+    --el-input-bg-color: #c3c3c7;
+    --el-input-border-color: #c3c3c7;
+  }
+}
+
+.el-cascader {
+  .el-input--default {
+    --el-input-text-color: #000;
+    --el-input-bg-color: #c3c3c7;
+    --el-input-border-color: #c3c3c7;
+  }
+}
+
+.el-cascader__dropdown {
+  .el-radio--default {
+    --el-input-text-color: #000;
+    --el-input-bg-color: #c3c3c7;
+    --el-input-border-color: #c3c3c7;
+    --el-radio-input-bg-color: #d2d3d9;
+    --el-radio-input-border: var(--el-border-width) var(--el-border-style) #828387;
+  }
+
+  --el-color-white: #d2d3d9;
+}
+
+.el-select__popper {
+  --el-color-white: #d2d3d9;
+  --el-border-color-light: #828387;
+}
+
+.el-input-number {
+  --el-fill-color-light: #c3c3c7;
+  --el-border: var(--el-border-width) var(--el-border-style) #828387;
+}
+
+.el-textarea {
+  --el-fill-color-blank: transparent;
+  --el-color-info: #000;
+}
+
+.el-input .el-input__count .el-input__count-inner {
+  background: none;
+}
+
+.el-input__inner::placeholder {
+  color: #666;
+}
+
+.el-button:focus {
+  color: #333333;
+  background-color: #d2d3d9;
+}
+.el-loading-mask {
+  background-color: rgba(255, 255, 255, 0.8);
+  .el-loading-spinner {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin: -60px 0 0 -60px;
+    .circular {
+      display: none;
+    }
+    .el-loading-text {
+      display: block;
+      width: 120px;
+      height: 120px;
+      position: relative;
+      text-indent: -300px;
+      overflow: hidden;
+      &::before {
+        content: '';
+        display: block;
+        width: 94px;
+        height: 20px;
+        background: url('../../assets/imgs/bg_loading.png') no-repeat;
+        background-size: 100% auto;
+        position: absolute;
+        top: 78px;
+        left: 13px;
+        z-index: 1;
+        animation: raise 0.8s ease-in-out infinite;
+        @keyframes raise {
+          0% {
+            background: url('../../assets/imgs/bg_loading.png') no-repeat 0 0;
+            background-size: 100% auto;
+          }
+          100% {
+            background: url('../../assets/imgs/bg_loading.png') no-repeat 0 -20px;
+            background-size: 100% auto;
+          }
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 120px;
+        height: 120px;
+        background: url('../../assets/imgs/loading.png') no-repeat;
+        background-size: 120px 120px;
+      }
+    }
+  }
+}
+.el-message {
+  margin-top: 30px;
+}
+
+.el-picker__popper.el-popper[role='tooltip'] {
+  background-color: #68666b;
+  border: 1px solid #68666b;
+  .el-picker-panel {
+    background: none;
+  }
+  .el-popper__arrow::before {
+    background-color: #68666b;
+  }
+  .el-date-table th {
+    color: #fff;
+    border-bottom: 1px solid #84848d;
+  }
+  .el-date-table td {
+    color: #fff;
+  }
+  .el-date-table td.next-month,
+  .el-date-table td.prev-month {
+    color: var(--el-datepicker-off-text-color);
+  }
+  .el-date-picker__header-label {
+    color: #fff;
+  }
+  .el-time-spinner__item {
+    color: rgb(173, 173, 173);
+  }
+  .el-time-spinner__item.active:not(.disabled) {
+    color: #fff;
+  }
+  .el-time-panel__btn {
+    color: rgb(173, 173, 173);
+    &.confirm {
+      color: #fff;
+    }
+  }
+  .el-time-spinner__item:hover:not(.disabled):not(.active) {
+    color: #fff;
+    background: #0c0c66;
+  }
+}
+
+.el-overlay {
+  background-color: rgba(0, 0, 0, 0);
+}
+.is-message-box {
+  .el-overlay-message-box {
+    .el-message-box {
+      background-color: #67656aea;
+      --el-text-color-primary: #fff;
+      --el-text-color-regular: #fff;
+      border: transparent;
+      border-radius: 10px;
+      border: transparent;
+      .el-message-box__header {
+        border-radius: 10px 10px 0 0;
+        background-color: var(--color);
+        margin-right: 0px;
+        padding: 10px;
+        min-height: 18px;
+      }
+      .el-message-box__message {
+        color: #fff;
+      }
+      .el-message-box__headerbtn {
+        font-size: 2rem;
+        top: 0;
+        .el-message-box__close {
+          color: #fff;
+          margin-top: 5px;
+        }
+      }
+      .el-message-box__content {
+        min-height: 50px;
+        .el-message-box__container {
+          margin-top: 18px;
+        }
+      }
+      .el-message-box__btns {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        padding-top: 0;
+        padding-bottom: 5px;
+
+        .el-button--default {
+          color: #333;
+          background-color: #dcdde0;
+          border: 0;
+          box-shadow: 0 0 5px #0006;
+        }
+        .el-button--default:first-child {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

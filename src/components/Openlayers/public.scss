@@ -1,0 +1,192 @@
+.station-wrap {
+  width: 100%;
+  min-width: 1024px;
+  .map {
+    width: 100%;
+    height: 100vh;
+    // background-color: rgb(84, 84, 116);
+  }
+  .station-left {
+    position: absolute;
+    top: 90px;
+    left: 0px;
+    width: 0;
+    max-height: calc(100vh - 90px);
+    writing-mode: vertical-lr;
+    .btnClose {
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      width: 16px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: #939399;
+      border-radius: 0 6px 6px 0;
+      margin-top: -25px;
+      cursor: pointer;
+      .el-icon {
+        color: #fff;
+        vertical-align: middle;
+        svg:first-child {
+          display: none;
+        }
+      }
+      &:hover {
+        background-color: #0c0c66;
+      }
+    }
+
+    .receive-btns {
+      position: absolute;
+      top: 100px;
+      left: 0;
+      z-index: 11;
+      writing-mode: horizontal-tb;
+      .receive-btn {
+        display: block;
+        width: 110px;
+        height: 50px;
+        line-height: 50px;
+        text-align: right;
+        background-color: #939399;
+        border-radius: 0 6px 6px 0;
+        padding-right: 2px;
+        overflow: hidden;
+        color: #fff;
+        margin-bottom: 5px;
+        margin-left: -94px;
+        cursor: pointer;
+        .el-icon {
+          color: #fff;
+          vertical-align: middle;
+        }
+        &:hover {
+          animation: btnLeftShow 0.5s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+        }
+        @keyframes btnLeftShow {
+          from {
+            margin-left: -94px;
+            background-color: #939399;
+          }
+          to {
+            margin-left: 0;
+            background-color: #0c0c66;
+          }
+        }
+      }
+    }
+  }
+  .station-center {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    .btnClose {
+      display: none;
+    }
+  }
+  .station-right {
+    position: absolute;
+    top: 90px;
+    right: 0px;
+    writing-mode: vertical-rl;
+    width: 0;
+    max-height: calc(100vh - 90px);
+
+    .btnClose {
+      position: absolute;
+      left: -16px;
+      top: 50%;
+      width: 16px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: #939399;
+      border-radius: 6px 0 0 6px;
+      margin-top: -25px;
+      cursor: pointer;
+      .el-icon {
+        color: #fff;
+        vertical-align: middle;
+        svg:nth-child(2) {
+          display: none;
+        }
+      }
+      &:hover {
+        background-color: #0c0c66;
+      }
+    }
+
+    .receive-btns {
+      position: absolute;
+      top: 100px;
+      right: 0;
+      z-index: 11;
+      width: 16px;
+      writing-mode: horizontal-tb;
+      .receive-btn {
+        display: block;
+        width: 110px;
+        height: 50px;
+        line-height: 50px;
+        background-color: #939399;
+        border-radius: 6px 0 0 6px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        padding-left: 2px;
+        color: #fff;
+        cursor: pointer;
+        text-align: left;
+        margin-left: 0px;
+        .el-icon {
+          color: #fff;
+          vertical-align: middle;
+        }
+        &:hover {
+          animation: btnRightShow 0.5s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+        }
+        @keyframes btnRightShow {
+          from {
+            margin-left: 0px;
+            background-color: #939399;
+          }
+          to {
+            margin-left: -94px;
+            background-color: #0c0c66;
+          }
+        }
+      }
+    }
+
+    &.fadein {
+      animation: move_back_right 1s normal forwards ease-in-out;
+    }
+
+    @-webkit-keyframes move_back_right {
+      from {
+        margin-right: -410px;
+      }
+
+      to {
+        margin-right: 0px;
+      }
+    }
+
+    @keyframes move_back_right {
+      from {
+        margin-right: -410px;
+      }
+
+      to {
+        margin-right: 0px;
+      }
+    }
+  }
+}

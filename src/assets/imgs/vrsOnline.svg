@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.998" height="24" viewBox="0 0 23.998 24">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#22cb64"/>
+      <stop offset="1" stop-color="#1eb358"/>
+    </linearGradient>
+  </defs>
+  <g id="基站" transform="translate(-4499 -8657)">
+    <path id="路径_3177" data-name="路径 3177" d="M0,0H24V24H0Z" transform="translate(4499 8657)" fill="none"/>
+    <path id="联合_63" data-name="联合 63" d="M8.391,21.463A10.874,10.874,0,1,1,13.5,21.43L10.927,24Z" transform="translate(4500.125 8657)" fill="url(#linear-gradient)"/>
+    <path id="路径_3175" data-name="路径 3175" d="M0,0H24V24H0Z" transform="translate(4499 8657)" fill="none"/>
+    <path id="路径_324" data-name="路径 324" d="M0,0H18V18H0Z" transform="translate(4502 8676.873) rotate(-90)" fill="none"/>
+    <g id="基站-2" data-name="基站" transform="translate(3181 7999)">
+      <path id="路径_1556" data-name="路径 1556" d="M295.165,367.485h18v18h-18Z" transform="translate(1025.835 292.515)" fill="none"/>
+      <path id="联合_6" data-name="联合 6" d="M0,13V11.556H2.166v-6.5H5.778V4.334H2.166a4.334,4.334,0,0,1,8.668,0H7.222v.722h3.611v6.5H13V13Zm3.611-1.444H9.389V6.5H3.611ZM4,2.889H9a2.888,2.888,0,0,0-5,0Z" transform="translate(1323.5 662)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

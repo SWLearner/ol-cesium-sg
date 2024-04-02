@@ -1,0 +1,233 @@
+@import './security.scss';
+
+$screen-max-width: 1400px;
+// 页面内容面板高度，上层结构代码的原因，此处只能这样锁定高度
+$view-height: calc(100vh - 157px);
+$left-panel-width-normal: 350px;
+$left-panel-width-small: 250px;
+
+.tab-wrap {
+  height: $view-height;
+  overflow-y: auto;
+  .tab-top {
+    padding: 30px 0 10px 30px;
+  }
+  .tab-left {
+    float: left;
+    width: $left-panel-width-normal;
+    height: 100%;
+    overflow: auto;
+    border-right: 1px solid #828387;
+  }
+  .tab-right {
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  .tab-left ~ .tab-right {
+    margin-left: $left-panel-width-normal;
+  }
+}
+@media screen and (max-width: $screen-max-width) {
+  .tab-wrap {
+    .tab-left {
+      width: $left-panel-width-small;
+    }
+    .tab-left ~ .tab-right {
+      margin-left: $left-panel-width-small;
+    }
+  }
+}
+
+// 垂直分割线样式
+.divider {
+  grid-area: divider;
+  background-color: #828387;
+  height: 100%;
+}
+
+//通用的方块样式
+.normal-box{
+  background-color: #68666b;
+  box-shadow: 0 0 15px var(--color) inset;
+  // box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  border-radius: 10px;
+}
+//通用的表单组件
+.normal-form-item{
+  --el-fill-color-blank:#c6c7cc;
+  --el-border-color:none;
+  --el-select-border-color-hover:none;
+}
+
+// 通用btn
+.normal-btn{
+  padding: 3px 15px;
+  background: #dcdde0;
+  vertical-align: middle;
+  border-radius: 4px;
+  margin-left: 15px;
+  cursor: pointer;
+  color: #000;
+  // box-shadow: 1px 1px 6px 0px #000000d6;
+  box-shadow: 1px 1px 1px 0px #000000d6;
+}
+
+// 显示
+.move-left {
+  -webkit-animation-name: move_left;
+  animation-name: move_left;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.fadein {
+  -webkit-animation-name: move_back;
+  animation-name: move_back;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  // -webkit-animation-fill-mode: forwards;
+  // animation-fill-mode: forwards;
+}
+@-webkit-keyframes move_left {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+}
+@keyframes move_left {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+}
+@-webkit-keyframes move_back {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0px);
+    transform: translatex(0px);
+  }
+}
+@keyframes move_back {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0px);
+    transform: translatex(0px);
+  }
+}
+.btnAmin {
+  position: absolute;
+  left: 410px;
+  top: 440px;
+  width: 20px;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px;
+  background-color: #8a8a90;
+  border-radius: 0 6px 6px 0;
+  padding-top: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  i {
+    color: #fff;
+  }
+  &:hover {
+    background-color: #0c0c66;
+  }
+}
+.btnAminLeft {
+  -webkit-animation-name: btn_left;
+  animation-name: btn_left;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes btn_left {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+}
+@keyframes btn_left {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+}
+.btnAminBack {
+  -webkit-animation-name: btn_back;
+  animation-name: btn_back;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes btn_back {
+  0% {
+    opacity: 0;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translatex(0px);
+    transform: translatex(0px);
+  }
+}
+@keyframes btn_back {
+  0% {
+    opacity: 0;
+    -webkit-transform: translatex(-410px);
+    transform: translatex(-410px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translatex(0px);
+    transform: translatex(0px);
+  }
+}

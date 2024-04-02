@@ -1,0 +1,47 @@
+// bigSecurity 的公共样式
+$table-line-bac: #636166;
+
+
+//自定义一种table格式
+.security-table{
+    height: calc(100% - 80px);
+    overflow-y: auto;
+    &.tab-contant{
+        padding-top:0;
+        .el-table--fit thead tr th:first-child{
+            padding-left:0;
+        }
+        .el-table--fit .el-table__row td:first-child{
+            padding-left:0;
+        }
+        .el-table {
+            background-color: transparent;
+        }
+        .el-table--fit .el-table__row td{
+            color:#fff;
+            border-bottom: 3px solid #68666b;
+            background-color:$table-line-bac;
+        }
+        
+    }
+}
+
+//工具栏
+.tools-menu{
+li{
+    .icon-diy{
+        width: 1em;
+        height: 1em;
+        margin-right: 0px;
+        cursor: pointer;
+        background: #0f0f80;
+        padding: 5px 16px;
+        vertical-align: sub;
+        float: right;
+        margin-top: 7px;
+        border-radius: 3px;
+        margin-left: 12px;
+    }
+}
+
+}
